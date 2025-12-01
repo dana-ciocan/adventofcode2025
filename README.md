@@ -2,7 +2,7 @@
 
 Let's have a go then
 
-- [ ] Day 1 part 1
+- [x] Day 1 part 1
 - [ ] Day 1 part 2
 - [ ] Day 2 part 1
 - [ ] Day 2 part 2
@@ -26,3 +26,15 @@ Let's have a go then
 - [ ] Day 11 part 2
 - [ ] Day 12 part 1
 - [ ] Day 12 part 2
+
+## Running the code
+
+This project uses deno because it has TypeScript support built in from the get go.
+
+Because I will forget how to run it by next year, here's how to run:
+
+```
+  deno day1/part1.ts
+```
+
+Easy peasy!
