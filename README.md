@@ -4,7 +4,7 @@ Let's have a go then
 
 - [x] Day 1 part 1
 - [x] Day 1 part 2
-- [ ] Day 2 part 1
+- [x] Day 2 part 1
 - [ ] Day 2 part 2
 - [ ] Day 3 part 1
 - [ ] Day 3 part 2
