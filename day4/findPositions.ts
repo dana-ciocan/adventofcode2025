@@ -1,4 +1,4 @@
-import { getSurroundingPaper } from './getSurroundingPaper';
+import { getSurroundingPaper } from './getSurroundingPaper.ts';
 
 export const findPositions = (input: string[][]) => {
   const positions: number[][] = [];
@@ -15,4 +15,19 @@ export const findPositions = (input: string[][]) => {
   });
 
   return positions;
+};
+
+export const removePaper = (input: string[][]) => {
+  let accessiblePaper = findPositions(input);
+  let paperRemoved = 0;
+
+  while (accessiblePaper.length > 0) {
+    accessiblePaper.forEach(([row, col]) => {
+      input[row][col] = 'x';
+    });
+    paperRemoved += accessiblePaper.length;
+    accessiblePaper = findPositions(input);
+  }
+
+  return paperRemoved;
 };

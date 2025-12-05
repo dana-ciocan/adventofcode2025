@@ -1,4 +1,6 @@
-import { sumHighestNumbers } from './findHighestNumberTwelveDigits.ts';
-import batteryBanks from './battery-banks.json' with { type: 'json' };
+import map from './map.json' with { type: 'json' };
+import { removePaper } from './findPositions.ts';
 
-console.log(sumHighestNumbers(batteryBanks));
+const formattedMap = map.map((row) => Array.from(row));
+
+console.log(removePaper(formattedMap));

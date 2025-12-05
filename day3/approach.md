@@ -58,3 +58,5 @@ So you'll want to search the first N - 11 digits for the first highest number, w
 Once you've got that number, if K is the index at which you found the highest number, you want to search from K + 1 to N - 10 digits and so on.
 
 It's still quite a mind boggling puzzle even now I have the answer, so no need to feel stupid.
+
+And yes I'm doing this at 4am because I couldn't sleep! Not because of the puzzle though.

@@ -7,9 +7,9 @@ Let's have a go then
 - [x] Day 2 part 1
 - [x] Day 2 part 2
 - [x] Day 3 part 1
-- [ ] Day 3 part 2
-- [ ] Day 4 part 1
-- [ ] Day 4 part 2
+- [x] Day 3 part 2
+- [x] Day 4 part 1
+- [x] Day 4 part 2
 - [ ] Day 5 part 1
 - [ ] Day 5 part 2
 - [ ] Day 6 part 1
