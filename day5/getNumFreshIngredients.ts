@@ -11,17 +11,44 @@ export const getNumFreshIngredients = (ranges: number[][]) => {
   ranges.forEach(([bottom, top], index) => {
     const adjustedRange = [bottom, top];
     const rangeSubset = ranges.slice(0, index);
-    console.log(rangeSubset);
+    let rangeAlreadyAdded = false;
+
+    console.log(`range: ${bottom} to ${top}`);
 
     for (let i = 0; i < rangeSubset.length; i++) {
-      if (bottom > rangeSubset[i][0] && bottom < rangeSubset[i][1]) {
-        adjustedRange[0] = rangeSubset[i][1] + 1;
+      if (
+        bottom >= rangeSubset[i][0] &&
+        bottom <= rangeSubset[i][1] &&
+        top >= rangeSubset[i][0] &&
+        top <= rangeSubset[i][1]
+      ) {
+        rangeAlreadyAdded = true;
+        break;
       }
-      if (top > rangeSubset[i][0] && top < rangeSubset[i][1]) {
-        adjustedRange[1] = rangeSubset[i][0] - 1;
+      if (bottom >= rangeSubset[i][0] && bottom <= rangeSubset[i][1]) {
+        if (adjustedRange[0] < rangeSubset[i][1] + 1) {
+          adjustedRange[0] = rangeSubset[i][1] + 1;
+        }
       }
+      if (top >= rangeSubset[i][0] && top <= rangeSubset[i][1]) {
+        if (adjustedRange[1] > rangeSubset[i][0] - 1) {
+          adjustedRange[1] = rangeSubset[i][0] - 1;
+        }
+      }
+
+      console.log(`adjusted range: ${adjustedRange[0]} to ${adjustedRange[1]}`);
     }
-    numFreshIngredients += adjustedRange[1] - adjustedRange[0] + 1;
+    if (adjustedRange[1] - adjustedRange[0] + 1 > 0) {
+      numFreshIngredients += rangeAlreadyAdded
+        ? 0
+        : adjustedRange[1] - adjustedRange[0] + 1;
+    }
+
+    console.log(
+      `Added ${
+        rangeAlreadyAdded ? 0 : adjustedRange[1] - adjustedRange[0] + 1
+      } ingredients`,
+    );
   });
 
   return numFreshIngredients;

@@ -11,7 +11,7 @@ Let's have a go then
 - [x] Day 4 part 1
 - [x] Day 4 part 2
 - [x] Day 5 part 1
-- [ ] Day 5 part 2
+- [x] Day 5 part 2
 - [ ] Day 6 part 1
 - [ ] Day 6 part 2
 - [ ] Day 7 part 1

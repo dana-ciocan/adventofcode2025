@@ -20,11 +20,65 @@ describe('getNumFreshIngredients', () => {
   it('should return 14', () => {
     expect(
       getNumFreshIngredients([
-        [3, 5],
+        [12, 18],
         [10, 14],
         [16, 20],
-        [12, 18],
+        [3, 5],
       ]),
     ).toEqual(14);
+  });
+
+  it('should return 14', () => {
+    expect(
+      getNumFreshIngredients([
+        [12, 18],
+        [10, 14],
+        [16, 20],
+        [3, 5],
+        [10, 12],
+      ]),
+    ).toEqual(14);
+  });
+
+  it('should return 15', () => {
+    expect(
+      getNumFreshIngredients([
+        [12, 18],
+        [10, 14],
+        [16, 20],
+        [18, 21],
+        [3, 5],
+        [10, 12],
+      ]),
+    ).toEqual(15);
+  });
+
+  it('should return 16', () => {
+    expect(
+      getNumFreshIngredients([
+        [12, 18], // 7
+        [18, 22], // 4
+        [10, 14], // 2
+        [16, 20], // 0
+        [18, 21], // 0
+        [3, 5], // 3
+        [10, 12], // 0
+      ]),
+    ).toEqual(16);
+  });
+
+  it('should return 16', () => {
+    expect(
+      getNumFreshIngredients([
+        [1, 24],
+        [12, 18],
+        [18, 22],
+        [10, 14],
+        [16, 20],
+        [18, 21],
+        [3, 5],
+        [10, 12],
+      ]),
+    ).toEqual(24);
   });
 });
